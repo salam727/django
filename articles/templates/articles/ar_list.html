@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Articles</title>
+    <meta name="description" content="abolfazl majidi,majidis web page">
+    <meta name="viewport" content="
+    width=device-width,initial-scale=1.0">
+
+<!-- #fafafa -->
+    <style>
+      html {
+        padding-top: 60px;
+      }
+      .title {
+        color: #120445;
+
+        padding: 0px 0px 15px 10px;
+        margin: 0px;
+
+        margin-right: 20px;
+      }
+      .box {
+        background: #e6e6e6;
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,.05);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+      }
+      #asli {
+        font-size: 80px;
+      }
+      .class_img {
+        float: left;
+        font-family:Century
+
+      }
+      .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0px;
+        content: " ";
+        clear: both;
+        height: 0px;
+      }
+      #rah nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+      }
+      #rah nav ul li {
+        float: left;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px
+      }
+      #rah nav ul li a {
+        text-decoration: none;
+      }
+      #rah nav ul li a:hover{
+        background: #00FF7F;
+        border-radius:5px;
+      }
+      .cont {
+        width: 960px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #f7f7f7;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e1e1e1;
+        margin-top: 20px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        padding-left: 10px
+      }
+
+
+
+
+      #post{
+        position: relative;
+      }
+      #img_post{
+        position: absolute;
+        left: 790px;
+        top: 5px;
+      }
+    </style>
+
+
+
+
+    <header id="rah" class="box clearfix">
+      <p class="class_img title" style="margin-right: 10px;font-size: 45px;">Articles</p>
+      <nav>
+        <ul>
+          <li><a target="_blank" href="http://127.0.0.1:8000">Home</a></li>
+          <li><a target="_blank" href="http://127.0.0.1:8000/about/">About Me</a></li>
+          <li><a target="_blank" href="http://127.0.0.1:8000/articles/">articles</a></li>
+        </ul>
+      </nav>
+      <a href="http://127.0.0.1:8000/media/images/hgh.png">
+        <img  style=" width: 60px;height: 60px;border: 1px solid black;border-radius:100px;margin: 0;float: right;"
+        src="http://127.0.0.1:8000/media/images/hgh.png">
+      </a>
+      <h6 style="float: right;">Abolfazl Majidi</h6>
+    </header>
+  </head>
+
+
+
+
+
+  <body>
+      {% for a in articles %}
+      <div class="cont card" id="post">
+        <h2 style="margin: 0;"><a style="text-decoration: none;color: black " href="{{a.slug}}">{{a.title}}</a></h2>
+              <img id="img_post" style=" width: 190px;height: 190px;border: 1px solid black;border-radius:10px;
+              margin-left: 0;" src={{a.thumbnail.url}}>
+
+        <p style="display: block;margin-right: 300px">{{a.description}}</p>
+        <small style="font-size: 4px;margin: 0">created in : {{a.created}}</small><br>
+        <small style="font-size: 4px;margin: 0">updated in : {{a.updated}}</small>
+
+
+      </div>
+      {% endfor %}
+
+  </body>
+
+</html>
+<!--  <hr style="border: 2px solid black;">
+
+-->
