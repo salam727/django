@@ -25,7 +25,7 @@ SECRET_KEY = 'd$4e1_^ddbx6u2+$m7!9p0@wceozvw!b)q45s-*u%-q%sb^*mr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nepton.pythonanywhere.com']
 
 
 # Application definition
@@ -119,6 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
+STATIC_ROOT='/home/Nepton/Nepton/static/'
+
 STATIC_URL = '/static/'
+
+MEDIA_ROOT='/home/Nepton/Nepton/media/'
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+ADMIN_MEDIA_PREFIX = '/media/admin/'
